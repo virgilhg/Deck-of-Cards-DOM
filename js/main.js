@@ -14,7 +14,7 @@ fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
-  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
+  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
   fetch(url)
     .then (res => res.json())
     .then (data => {
