@@ -57,6 +57,7 @@ function cardValueConverter(val){
 
 
 let deckId2 = ''
+let player2Value
 
 fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 .then(res => res.json()) // parse response as JSON
@@ -79,7 +80,7 @@ function getPlayer2(){
   .then(data => {
     console.log(data)
     document.querySelector('#player2').src = data.cards[0].image
-    let player2Value = cardValueConverter(data.cards[0].value)
+    player2Value = cardValueConverter(data.cards[0].value)
   })
   .catch(err => {
       console.log(`error ${err}`)
