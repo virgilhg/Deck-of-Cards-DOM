@@ -22,10 +22,10 @@ function getFetch(){
       const player1Val= Number(cardValueConverter(data.cards[0].value))
       document.querySelector('#player1').src = data.cards[0].image
     })
-     if(player1.val< player2.val){
+     if(player1Val< player2Value){
           document.querySelector("h3").innerText= "Player 2 won"
        }
-       else if(player1.val> player2.val){
+       else if(player1Val> player2Value){
           document.querySelector("h3").innerText= "Player 1 won"
        }
        else{
