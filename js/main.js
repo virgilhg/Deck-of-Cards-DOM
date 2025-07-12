@@ -21,8 +21,7 @@ function getFetch(){
       console.log(data)
       const player1Val= Number(cardValueConverter(data.cards[0].value))
       document.querySelector('#player1').src = data.cards[0].image
-    })
-     if(player1Val< player2Value){
+      if(player1Val< player2Value){
           document.querySelector("h3").innerText= "Player 2 won"
        }
        else if(player1Val> player2Value){
@@ -31,6 +30,7 @@ function getFetch(){
        else{
           document.querySelector("h3").innerText= "It's time for War"
        }
+    })
 
       .catch(err =>{
       console.log(`error ${err}`)
