@@ -19,8 +19,11 @@ function getFetch(){
     .then (res => res.json())
     .then (data => {
       console.log(data)
-      const player1Val= Number(cardValueConverter(data.cards[0].value))
+      const player1Val= cardValueConverter(data.cards[0].value)
+      const player2Value = cardValueConverter(data.cards[0].value)
       document.querySelector('#player1').src = data.cards[0].image
+      document.querySelector('#player2').src = data.cards[1].image
+
       if(player1Val< player2Value){
           document.querySelector("h3").innerText= "Player 2 won"
        }
@@ -56,36 +59,36 @@ function cardValueConverter(val){
 // Dylan's Code
 
 
-let deckId2 = ''
+// let deckId2 = ''
 
-fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-.then(res => res.json()) // parse response as JSON
-.then(data => {
-  console.log(data)
-  deckId2 = data.deck_id
-})
-.catch(err => {
-    console.log(`error ${err}`)
-});
+// fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+// .then(res => res.json()) // parse response as JSON
+// .then(data => {
+//   console.log(data)
+//   deckId2 = data.deck_id
+// })
+// .catch(err => {
+//     console.log(`error ${err}`)
+// });
 
 
-document.querySelector('button').addEventListener('click', getPlayer2)
+// document.querySelector('button').addEventListener('click', getPlayer2)
 
-function getPlayer2(){
-  const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
+// function getPlayer2(){
+//   const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
 
-  fetch(url)
-  .then(res => res.json()) // parse response as JSON
-  .then(data => {
-    console.log(data)
-    document.querySelector('#player2').src = data.cards[0].image
-    let player2Value = cardValueConverter(data.cards[0].value)
-  })
-    return player2Value
-  .catch(err => {
-      console.log(`error ${err}`)
-  });
-}
+//   fetch(url)
+//   .then(res => res.json()) // parse response as JSON
+//   .then(data => {
+//     console.log(data)
+//     document.querySelector('#player2').src = data.cards[0].image
+    
+//   })
+//     return player2Value
+//   .catch(err => {
+//       console.log(`error ${err}`)
+//   });
+// }
 
 
 
