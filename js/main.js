@@ -20,7 +20,7 @@ function getFetch(){
     .then (data => {
       console.log(data)
       const player1Val= cardValueConverter(data.cards[0].value)
-      const player2Value = cardValueConverter(data.cards[0].value)
+      const player2Value = cardValueConverter(data.cards[1].value)
       document.querySelector('#player1').src = data.cards[0].image
       document.querySelector('#player2').src = data.cards[1].image
 
