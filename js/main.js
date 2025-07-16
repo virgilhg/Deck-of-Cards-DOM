@@ -1,4 +1,4 @@
-//Get the deck
+// Virgil and Dylan's code
 let deckId = ""
 
 fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
